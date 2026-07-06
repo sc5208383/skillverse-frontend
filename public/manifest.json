@@ -5,9 +5,13 @@
   "name": "Skillverse",
   "orientation": "any",
   "scope": "/",
-  "short_name": "skillverse",
+  "short_name": "Skillverse",
   "start_url": "/",
   "theme_color": "#0d1210",
   "id": "skillverse-app",
-  "description": "Learn Java, C, C++ and Python with theory, mind maps and video lessons."
+  "description": "Learn Java, C, C++ and Python with theory, mind maps and video lessons.",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
 }
