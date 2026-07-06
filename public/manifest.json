@@ -1,0 +1,13 @@
+{
+  "background_color": "#0d1210",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Skillverse",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "skillverse",
+  "start_url": "/",
+  "theme_color": "#0d1210",
+  "id": "skillverse-app",
+  "description": "Learn Java, C, C++ and Python with theory, mind maps and video lessons."
+}
