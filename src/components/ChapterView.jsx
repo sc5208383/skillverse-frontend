@@ -79,29 +79,19 @@ export default function ChapterView({ trackKey, trackName }) {
               </>
             )}
           </div>
-
-          {data.recommendedVideos && data.recommendedVideos.length > 0 && (
-            <div className="theory-panel" style={{ marginTop: 20 }}>
-              <h3>Recommended videos</h3>
-              <p style={{ marginBottom: 12 }}>Trusted channels to go deeper on {trackName}:</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {data.recommendedVideos.map((v, i) => (
-                  
-                    key={i}
-                    href={v.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn"
-                    style={{ textAlign: 'left', textDecoration: 'none' }}
-                  >
-                    ▶ {v.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
+{data.recommendedVideos && data.recommendedVideos.length > 0 && (
+        <div className="theory-panel" style={{ marginTop: 20 }}>
+          <h3>Recommended videos</h3>
+          <p style={{ marginBottom: 12 }}>Trusted channels to go deeper on {trackName}:</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {data.recommendedVideos.map((v, i) => (
+              <a key={i} href={v.url} target="_blank" rel="noopener noreferrer" className="btn" style={{ textAlign: 'left', textDecoration: 'none' }}>▶ {v.label}</a>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      )}
+    </div>
+  </div>
+  </section>
   );
 }
