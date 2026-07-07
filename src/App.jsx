@@ -16,7 +16,7 @@ export default function App() {
   const [payOpen, setPayOpen] = useState(false);
   const [payTrack, setPayTrack] = useState(null);
   const [adminOpen, setAdminOpen] = useState(false);
-  const [showChapter, setShowChapter] = useState(false);
+  const [openChapterTrack, setOpenChapterTrack] = useState(null);
   const [currentStudent, setCurrentStudent] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('skillverse_token') || null);
 
@@ -38,8 +38,8 @@ export default function App() {
   const openTrack = (track) => {
     const unlocked = currentStudent && currentStudent.enrolledTracks.includes(track.key);
     if (unlocked && track.hasContent) {
-      setShowChapter(true);
-      document.getElementById('chapter-sect')?.scrollIntoView({ behavior: 'smooth' });
+      setOpenChapterTrack(track);
+      setTimeout(() => document.getElementById('chapter-sect')?.scrollIntoView({ behavior: 'smooth' }), 50);
     } else if (unlocked && !track.hasContent) {
       alert('This track is unlocked. Its chapters are coming soon in this demo.');
     } else {
@@ -72,7 +72,7 @@ export default function App() {
           onOpenTrack={openTrack}
           onOpenPayment={openPayment}
         />
-        {showChapter && <ChapterView t={t} />}
+        {openChapterTrack && <ChapterView trackKey={openChapterTrack.key} trackName={openChapterTrack.name} />}
         <AdminPanel open={adminOpen} t={t} />
       </main>
       <footer>{t.footer}</footer>
