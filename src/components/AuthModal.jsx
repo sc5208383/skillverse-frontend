@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { API_BASE } from '../config';
 
 export default function AuthModal({ open, initialTab, onClose, t, onLoggedIn }) {
@@ -6,6 +6,13 @@ export default function AuthModal({ open, initialTab, onClose, t, onLoggedIn }) 
   const [signup, setSignup] = useState({ name: '', email: '', password: '', preferredLanguage: 'en' });
   const [login, setLogin] = useState({ email: '', password: '' });
   const [msg, setMsg] = useState({ text: '', ok: false });
+
+  useEffect(() => {
+    if (open) {
+      setTab(initialTab || 'login');
+      setMsg({ text: '', ok: false });
+    }
+  }, [open, initialTab]);
 
   if (!open) return null;
 
@@ -49,10 +56,6 @@ export default function AuthModal({ open, initialTab, onClose, t, onLoggedIn }) 
     <div className="modal-overlay">
       <div className="modal-box">
         <button className="modal-close" onClick={onClose}>✕</button>
-        <div className="tab-row">
-          <button className={tab === 'login' ? 'active' : ''} onClick={() => setTab('login')}>{t.tab_login}</button>
-          <button className={tab === 'signup' ? 'active' : ''} onClick={() => setTab('signup')}>{t.tab_signup}</button>
-        </div>
 
         {tab === 'signup' ? (
           <div>
@@ -75,6 +78,12 @@ export default function AuthModal({ open, initialTab, onClose, t, onLoggedIn }) 
               </select>
             </div>
             <button className="btn btn-solid" style={{ width: '100%' }} onClick={submitSignup}>{t.submit_signup}</button>
+            <p style={{ textAlign: 'center', marginTop: 14, fontSize: 13, color: 'var(--paper-dim)' }}>
+              Already have an account?{' '}
+              <span style={{ color: 'var(--copper-light)', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => setTab('login')}>
+                Log in
+              </span>
+            </p>
           </div>
         ) : (
           <div>
@@ -87,6 +96,12 @@ export default function AuthModal({ open, initialTab, onClose, t, onLoggedIn }) 
               <input type="password" value={login.password} onChange={e => setLogin({ ...login, password: e.target.value })} placeholder="••••••••" />
             </div>
             <button className="btn btn-solid" style={{ width: '100%' }} onClick={submitLogin}>{t.submit_login}</button>
+            <p style={{ textAlign: 'center', marginTop: 14, fontSize: 13, color: 'var(--paper-dim)' }}>
+              New here?{' '}
+              <span style={{ color: 'var(--copper-light)', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => setTab('signup')}>
+                Sign up
+              </span>
+            </p>
           </div>
         )}
         {msg.text && <p className={`form-msg ${msg.ok ? 'ok' : 'err'}`}>{msg.text}</p>}

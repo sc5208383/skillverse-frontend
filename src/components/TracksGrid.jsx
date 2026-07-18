@@ -32,12 +32,15 @@ export default function TracksGrid({ tracks, t, currentStudent, onOpenTrack, onO
               <div className="track-fee-row">
                 <span className="track-fee">₹{tr.fee.toLocaleString('en-IN')}<span> /course</span></span>
               </div>
-              <div className="track-actions">
-                <button className="btn" onClick={() => onOpenTrack(tr)}>
-                  {unlocked && tr.hasContent ? t.open_course : t.enrol}
-                </button>
-                {!unlocked && (
-                  <button className="btn btn-solid" onClick={() => onOpenPayment(tr)}>{t.enrol}</button>
+              <div className="track-actions" style={{ justifyContent: 'center' }}>
+                {unlocked ? (
+                  <button className="btn" style={{ flex: 1 }} onClick={() => onOpenTrack(tr)}>
+                    {tr.hasContent ? t.open_course : t.enrol}
+                  </button>
+                ) : (
+                  <button className="btn btn-solid" style={{ flex: 1 }} onClick={() => onOpenPayment(tr)}>
+                    {t.enrol}
+                  </button>
                 )}
               </div>
             </div>
