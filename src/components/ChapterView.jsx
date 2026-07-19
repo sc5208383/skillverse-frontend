@@ -10,6 +10,22 @@ const positions = [
   { x: 200, y: 10 }   // topic 4 - top-center
 ];
 
+// Splits a label into up to 2 lines so long text doesn't overflow its box
+function wrapLabel(text, maxLen = 19) {
+  if (text.length <= maxLen) return [text];
+  const words = text.split(' ');
+  let line1 = '';
+  let line2 = '';
+  for (const w of words) {
+    if ((line1 + ' ' + w).trim().length <= maxLen) {
+      line1 = (line1 + ' ' + w).trim();
+    } else {
+      line2 = (line2 + ' ' + w).trim();
+    }
+  }
+  return line2 ? [line1, line2] : [line1];
+}
+
 export default function ChapterView({ trackKey, trackName }) {
   const data = syllabus[trackKey];
   const [partIndex, setPartIndex] = useState(0);
@@ -44,20 +60,33 @@ export default function ChapterView({ trackKey, trackName }) {
           <div className="mindmap-box">
             <svg className="mindmap" viewBox="0 0 560 320">
               <g>
-                {part.topics.map((t, i) => (
-                  <path key={i} className="mm-link" d={`M280,160 L${positions[i].x + 80},${positions[i].y + 20}`} />
-                ))}
+                {part.topics.map((t, i) => {
+                  const lines = wrapLabel(t.label);
+                  const halfHeight = lines.length > 1 ? 24 : 20;
+                  return <path key={i} className="mm-link" d={`M280,160 L${positions[i].x + 80},${positions[i].y + halfHeight}`} />;
+                })}
               </g>
               <g className="mm-node mm-root">
                 <rect x="220" y="140" width="120" height="40" rx="8" />
                 <text x="280" y="164" textAnchor="middle">{trackName}</text>
               </g>
-              {part.topics.map((t, i) => (
-                <g className="mm-node" key={t.key} onClick={() => setActiveIndex(i)}>
-                  <rect x={positions[i].x} y={positions[i].y} width="160" height="40" rx="8" />
-                  <text x={positions[i].x + 80} y={positions[i].y + 24} textAnchor="middle">{t.label}</text>
-                </g>
-              ))}
+              {part.topics.map((t, i) => {
+                const lines = wrapLabel(t.label);
+                const boxHeight = lines.length > 1 ? 48 : 40;
+                return (
+                  <g className="mm-node" key={t.key} onClick={() => setActiveIndex(i)}>
+                    <rect x={positions[i].x} y={positions[i].y} width="160" height={boxHeight} rx="8" />
+                    {lines.length === 1 ? (
+                      <text x={positions[i].x + 80} y={positions[i].y + 24} textAnchor="middle">{lines[0]}</text>
+                    ) : (
+                      <>
+                        <text x={positions[i].x + 80} y={positions[i].y + 20} textAnchor="middle">{lines[0]}</text>
+                        <text x={positions[i].x + 80} y={positions[i].y + 34} textAnchor="middle">{lines[1]}</text>
+                      </>
+                    )}
+                  </g>
+                );
+              })}
             </svg>
           </div>
         </div>

@@ -245,7 +245,7 @@ export const syllabus = {
         key: 'python1',
         title: 'Python Programming — I (Semester V)',
         topics: [
-          { key: 'unit1', label: 'Unit I — Introduction', heading: 'Unit I — Introduction to Python Programming',
+          { key: 'unit1', label: 'Introduction', heading: 'Unit I — Introduction to Python Programming',
             body: 'In simple words: this unit is about getting to know Python before writing any real code - what it is, where it came from, and getting it installed on your computer.',
             steps: [
               'Introduction to Python - what the language is, in plain terms: a programming language designed to be easy to read and quick to write.',
@@ -261,7 +261,7 @@ export const syllabus = {
               { label: 'Search: "history and features of Python explained"', url: 'https://www.youtube.com/results?search_query=history+and+features+of+python+explained' }
             ] },
 
-          { key: 'unit2', label: 'Unit II — Basics', heading: 'Unit II — Basics of Python Programming',
+          { key: 'unit2', label: 'Basics', heading: 'Unit II — Basics of Python Programming',
             body: 'This unit covers the actual building blocks every Python program is made of - in simple words, the "words" and "grammar" of the language.',
             steps: [
               'Python identifiers, variables and keywords - the rules for naming things in a program, and words Python reserves for itself and won\'t let you use as names.',
@@ -280,7 +280,7 @@ export const syllabus = {
               { label: 'Search: "Python if else loops Apna College"', url: 'https://www.youtube.com/results?search_query=python+if+else+loops+apna+college' }
             ] },
 
-          { key: 'unit3', label: 'Unit III — Strings & Lists', heading: 'Unit III — Python Strings',
+          { key: 'unit3', label: 'Strings & Lists', heading: 'Unit III — Python Strings',
             body: 'This unit covers two of Python\'s most-used data structures: text (strings) and ordered collections (lists) - in simple words, how Python stores and works with words and groups of items.',
             steps: [
               'Introduction to strings - string literals, and assigning a string to a variable, including multiline strings (text that spans several lines).',
@@ -298,7 +298,7 @@ export const syllabus = {
               { label: 'Search: "Python lists explained CodeWithHarry"', url: 'https://www.youtube.com/results?search_query=python+lists+explained+codewithharry' }
             ] },
 
-          { key: 'unit4', label: 'Unit IV — Tuples & Functions', heading: 'Unit IV — Python Tuples, Dictionary and Functions',
+          { key: 'unit4', label: 'Tuples & Functions', heading: 'Unit IV — Python Tuples, Dictionary and Functions',
             body: 'This unit covers Python\'s fixed (unchangeable) collection type, and how to organize code into reusable blocks called functions - in simple words, "locked" lists, and named recipes you can reuse.',
             steps: [
               'Introduction to tuples - creating a tuple, and how it differs from a list (a tuple cannot be changed once it is created).',
@@ -324,7 +324,7 @@ export const syllabus = {
         key: 'python2',
         title: 'Python Programming — II (Semester VI)',
         topics: [
-          { key: 'unit1', label: 'Unit I — OOP Concepts', heading: 'Unit I — Object Oriented Concepts in Python',
+          { key: 'unit1', label: 'OOP Concepts', heading: 'Unit I — Object Oriented Concepts in Python',
             body: 'In simple words: this unit teaches how to group related data and actions together into one reusable "object" - the same idea from C++/Java, now in Python.',
             steps: [
               'Overview of OOP terminology - getting familiar with words like class, object, attribute and method before using them in code.',
@@ -340,7 +340,7 @@ export const syllabus = {
               { label: 'Search: "Python inheritance explained simple"', url: 'https://www.youtube.com/results?search_query=python+inheritance+explained+simple' }
             ] },
 
-          { key: 'unit2', label: 'Unit II — Exceptions & Regex', heading: 'Unit II — Python Exception Handling and Regular Expressions',
+          { key: 'unit2', label: 'Exceptions & Regex', heading: 'Unit II — Python Exception Handling and Regular Expressions',
             body: 'In simple words: exception handling is how a program catches its own mistakes gracefully instead of crashing; a regular expression is a mini search-pattern for finding specific text.',
             steps: [
               'Introduction, and the difference between a syntax error and an exception - a syntax error means the code itself is written wrong; an exception is a problem that happens while otherwise-correct code is running.',
@@ -357,7 +357,7 @@ export const syllabus = {
               { label: 'Search: "Python regular expressions regex tutorial"', url: 'https://www.youtube.com/results?search_query=python+regular+expressions+regex+tutorial' }
             ] },
 
-          { key: 'unit3', label: 'Unit III — File Handling', heading: 'Unit III — File Handling in Python',
+          { key: 'unit3', label: 'File Handling', heading: 'Unit III — File Handling in Python',
             body: 'In simple words: this unit is about saving data to a file on disk, and reading it back later, plus managing files and folders from inside your code.',
             steps: [
               'File objects - understanding the special object Python gives you once a file is opened, which you then use to read or write.',
@@ -374,7 +374,7 @@ export const syllabus = {
               { label: 'Search: "Python file handling read write CodeWithHarry"', url: 'https://www.youtube.com/results?search_query=python+file+handling+read+write+codewithharry' }
             ] },
 
-          { key: 'unit4a', label: 'Unit IV(a) — GUI with Tkinter', heading: 'Unit IV — Building a GUI with Tkinter',
+          { key: 'unit4a', label: 'GUI (Tkinter)', heading: 'Unit IV — Building a GUI with Tkinter',
             body: 'In simple words: so far every program has run in a plain text terminal - this unit is about giving a program actual clickable windows, buttons and boxes.',
             steps: [
               'GUI programming toolkits for Python, and an introduction to Tkinter - Python\'s own built-in library for building windows and on-screen controls.',
@@ -388,7 +388,7 @@ export const syllabus = {
               { label: 'Search: "Python Tkinter GUI tutorial for beginners"', url: 'https://www.youtube.com/results?search_query=python+tkinter+gui+tutorial+for+beginners' }
             ] },
 
-          { key: 'unit4b', label: 'Unit IV(b) — Python with MySQL', heading: 'Unit IV — Python with MySQL',
+          { key: 'unit4b', label: 'Python + MySQL', heading: 'Unit IV — Python with MySQL',
             body: 'In simple words: this unit connects Python to a real database, so your program\'s data is saved permanently instead of disappearing when the program closes.',
             steps: [
               'Introduction to MySQL, and installing a MySQL driver (MySQL Connector or MySQLdb) - the extra tool Python needs to be able to talk to a MySQL database.',
