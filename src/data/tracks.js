@@ -243,12 +243,12 @@ export const syllabus = {
     parts: [
       {
         key: 'python1',
-        title: 'Python Programming — I (Semester V)',
+        title: 'Introduction to Python Programming  (Semester V)',
         topics: [
           { key: 'unit1', label: 'Introduction', heading: 'Unit I — Introduction to Python Programming',
             body: 'In simple words: this unit is about getting to know Python before writing any real code - what it is, where it came from, and getting it installed on your computer.',
             steps: [
-              'Introduction to Python - what the language is, in plain terms: a programming language designed to be easy to read and quick to write.',
+              'Introduction to Python - Python is a simple, easy-to-learn, and powerful programming language. It was created by Guido van Rossum in 1991. Python has a clear and readable syntax, making it a great choice for beginners as well as experienced programmers.Python is used to build websites, develop software, automate tasks, analyze data, create artificial intelligence (AI) and machine learning applications, and much more..',
               'History of Python - how and why the language was created.',
               'Versions of Python - the major releases and how they differ from one another.',
               'Need and features of Python - why this language was designed the way it was, and what makes it different from languages like Java or C.',
