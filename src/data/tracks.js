@@ -1,8 +1,8 @@
 export const initialTracks = [
-  { key: 'java', name: 'Java', pillClass: 'pill-java', fee: 1499, chapters: 6, hasContent: true },
-  { key: 'c', name: 'C', pillClass: 'pill-c', fee: 999, chapters: 4, hasContent: true },
-  { key: 'cpp', name: 'C++', pillClass: 'pill-cpp', fee: 1299, chapters: 6, hasContent: true },
-  { key: 'python', name: 'Python', pillClass: 'pill-python', fee: 1799, chapters: 5, hasContent: true }
+  { key: 'java', name: 'Java', pillClass: 'pill-java', fee: 39, chapters: 6, hasContent: true },
+  { key: 'c', name: 'C', pillClass: 'pill-c', fee: 39, chapters: 4, hasContent: true },
+  { key: 'cpp', name: 'C++', pillClass: 'pill-cpp', fee: 39, chapters: 6, hasContent: true },
+  { key: 'python', name: 'Python', pillClass: 'pill-python', fee: 59, chapters: 5, hasContent: true }
 ];
 
 // EDIT SYLLABUS HERE.
