@@ -107,43 +107,29 @@ export default function ChapterView({ trackKey, trackName }) {
         <h3>{topic.heading}</h3>
         <p>{topic.body}</p>
         {topic.steps && (
-  <ol style={{ margin: '10px 0 0', paddingLeft: 20, color: 'var(--paper-dim)', fontSize: 14, lineHeight: 1.7 }}>
-    {topic.steps.map((s, i) => (
-      <li key={i} style={{ marginBottom: 16 }}>
-        {s.point}
-        {s.example && (
-          <div style={{
-            marginTop: 8,
-            background: 'var(--board)',
-            border: '1px solid var(--line)',
-            borderRadius: 8,
-            padding: '10px 14px',
-            color: 'var(--mint)',
-            fontSize: 13,
-            fontFamily: 'var(--font-mono)'
-          }}>
-            {s.example}
-          </div>
+          <ol style={{ margin: '10px 0 0', paddingLeft: 20, color: 'var(--paper-dim)', fontSize: 14, lineHeight: 1.7 }}>
+            {topic.steps.map((s, i) => (
+              <li key={i} style={{ marginBottom: 16 }}>
+                {s.point}
+                {s.example && (
+                  <div style={{
+                    marginTop: 8,
+                    background: 'var(--board)',
+                    border: '1px solid var(--line)',
+                    borderRadius: 8,
+                    padding: '10px 14px',
+                    color: 'var(--mint)',
+                    fontSize: 13,
+                    fontFamily: 'var(--font-mono)',
+                    whiteSpace: 'pre-wrap'
+                  }}>
+                    {s.example}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ol>
         )}
-      </li>
-    ))}
-  </ol>
-)}
-{s.example && (
-  <div style={{
-    marginTop: 8,
-    background: 'var(--board)',
-    border: '1px solid var(--line)',
-    borderRadius: 8,
-    padding: '10px 14px',
-    color: 'var(--mint)',
-    fontSize: 13,
-    fontFamily: 'var(--font-mono)',
-    whiteSpace: 'pre-wrap'
-  }}>
-    {s.example}
-  </div>
-)}
         {topic.code && <pre>{topic.code}</pre>}
 
         {topic.videos && topic.videos.length > 0 && (
