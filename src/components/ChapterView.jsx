@@ -108,7 +108,16 @@ export default function ChapterView({ trackKey, trackName }) {
         <p>{topic.body}</p>
         {topic.steps && (
           <ol style={{ margin: '10px 0 0', paddingLeft: 20, color: 'var(--paper-dim)', fontSize: 14, lineHeight: 1.7 }}>
-            {topic.steps.map((s, i) => <li key={i} style={{ marginBottom: 8 }}>{s}</li>)}
+            {topic.steps.map((s, i) => (
+              <li key={i} style={{ marginBottom: 14 }}>
+                {s.point}
+                {s.example && (
+                  <div style={{ marginTop: 4, fontStyle: 'italic', color: 'var(--mint)', fontSize: 13 }}>
+                    {s.example}
+                  </div>
+                )}
+              </li>
+            ))}
           </ol>
         )}
         {topic.code && <pre>{topic.code}</pre>}
