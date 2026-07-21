@@ -129,6 +129,21 @@ export default function ChapterView({ trackKey, trackName }) {
     ))}
   </ol>
 )}
+{s.example && (
+  <div style={{
+    marginTop: 8,
+    background: 'var(--board)',
+    border: '1px solid var(--line)',
+    borderRadius: 8,
+    padding: '10px 14px',
+    color: 'var(--mint)',
+    fontSize: 13,
+    fontFamily: 'var(--font-mono)',
+    whiteSpace: 'pre-wrap'
+  }}>
+    {s.example}
+  </div>
+)}
         {topic.code && <pre>{topic.code}</pre>}
 
         {topic.videos && topic.videos.length > 0 && (
